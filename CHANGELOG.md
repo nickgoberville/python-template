@@ -1,3 +1,10 @@
+## v0.2.1 (2025-08-26)
+
+### Fix
+
+- **chore**: testing commitizen versioning
+- **config**: added poetry as version_provider for commitizen
+
 ## v0.2.0 (2025-08-26)
 
 ### Fix
