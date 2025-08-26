@@ -1,0 +1,46 @@
+[tool.poetry]
+name = "my_project"
+version = "0.1.0"
+description = "A template for new Python projects."
+authors = ["Nick Goberville <nickgoberville21@gmail.com>"]
+readme = "README.md"
+packages = [{include = "my_project", from = "src"}]
+
+[tool.poetry.dependencies]
+python = "^3.12"
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^8.4.1"
+pytest-cov = "^6.2.1"
+ruff = "^0.12.10"
+black = "^25.1.0"
+mkdocs-material = "^9.6.18"
+jupyterlab = "^4.4.6"
+commitizen = "^4.8.3"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+# --- Tool Configurations ---
+[tool.commitizen]
+name = "cz_conventional_commits"
+version_files = [
+    "pyproject.toml:version",
+    "src/my_project/__init__.py:__version__"
+]
+tag_format = "v$version"
+update_changelog_on_bump = true
+
+[tool.ruff]
+line-length = 88
+select = ["E", "W", "F", "I", "C", "B"]
+ignore = ["E501"] # Ignored because black handles it
+
+[tool.black]
+line-length = 88
+
+[tool.pytest.ini_options]
+minversion = "6.0"
+addopts = "-ra -q --cov=src --cov-report=term-missing"
+testpaths = ["tests"]
