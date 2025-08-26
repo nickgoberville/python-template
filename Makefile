@@ -18,12 +18,15 @@ install:
 	poetry install
 
 lint:
-	poetry run ruff check src tests
-	poetry run black --check src tests
+	# Check formatting and linting with one tool
+	poetry run ruff check .
+	poetry run ruff format --check .
 
 format:
-	poetry run ruff --fix src tests
-	poetry run black src tests
+	# Auto-format and auto-fix with one tool
+	poetry run ruff check --fix .
+	poetry run ruff format .
+	@echo "Code formatted and linting issues fixed."
 
 test:
 	poetry run pytest

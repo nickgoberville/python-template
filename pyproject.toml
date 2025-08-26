@@ -13,7 +13,6 @@ python = "^3.12"
 pytest = "^8.4.1"
 pytest-cov = "^6.2.1"
 ruff = "^0.12.10"
-black = "^25.1.0"
 mkdocs-material = "^9.6.18"
 jupyterlab = "^4.4.6"
 commitizen = "^4.8.3"
@@ -34,11 +33,10 @@ update_changelog_on_bump = true
 
 [tool.ruff]
 line-length = 88
+
+[tool.ruff.lint]
 select = ["E", "W", "F", "I", "C", "B"]
 ignore = ["E501"] # Ignored because black handles it
-
-[tool.black]
-line-length = 88
 
 [tool.pytest.ini_options]
 minversion = "6.0"
