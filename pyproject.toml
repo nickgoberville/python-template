@@ -24,7 +24,7 @@ build-backend = "poetry.core.masonry.api"
 # --- Tool Configurations ---
 [tool.commitizen]
 name = "cz_conventional_commits"
-version = "0.2.0"
+version_provider = "poetry"
 version_files = [
     "src/my_project/__init__.py:__version__",
     "pyproject.toml:tool.poetry.version"
