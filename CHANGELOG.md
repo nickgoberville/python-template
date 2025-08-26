@@ -1,3 +1,9 @@
+## v0.2.2 (2025-08-26)
+
+### Fix
+
+- **chore**: updated poetry lock after pyproject.toml updates
+
 ## v0.2.1 (2025-08-26)
 
 ### Fix
